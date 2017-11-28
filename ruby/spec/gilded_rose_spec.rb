@@ -2,6 +2,8 @@ require 'gilded_rose'
 
 describe GildedRose do
 
+  let(:gilded_rose) { GildedRose.new }
+
   describe "#update_quality" do
     it "does not change the name" do
       items = [Item.new("foo", 0, 0)]
@@ -69,5 +71,14 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
   end
+
+  describe '#reduce_days' do
+    it 'reduces the days for regular items' do
+      items = [Item.new("foo", 1, 1)]
+      GildedRose.new(items).reduce_days
+      expect(items[0].sell_in).to eq 0
+    end
+  end
+
 
 end

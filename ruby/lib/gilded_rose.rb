@@ -57,7 +57,19 @@ class GildedRose
       end
     end
   end
+
+  def reduce_days
+    @items.each do |item|
+      if item.name != CONST_SULF
+        item.sell_in -= 1
+      end
+    end
+  end
+
 end
+
+
+
 
 class Item
   attr_accessor :name, :sell_in, :quality
