@@ -15,6 +15,12 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
 
+    it 'reduces the sell_in value by one day' do
+      items = [Item.new("foo", 1, 1)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].sell_in).to eq 0
+    end
+
     it 'increases the quality of brie by one each day' do
       items = [Item.new("Aged Brie", 1, 1)]
       GildedRose.new(items).update_quality()
@@ -29,10 +35,10 @@ describe GildedRose do
     end
 
     it 'quality can never be more than 50' do
-        items = [Item.new("Aged Brie", 2, 49)]
-        GildedRose.new(items).update_quality()
-        GildedRose.new(items).update_quality()
-        expect(items[0].quality).to eq 50
+      items = [Item.new("Aged Brie", 2, 49)]
+      GildedRose.new(items).update_quality()
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 50
     end
   end
 
