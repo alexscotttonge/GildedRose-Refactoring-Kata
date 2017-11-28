@@ -35,9 +35,11 @@ class GildedRose
           end
         end
       end
+      # reduce_days #
       if item.name != CONST_SULF
         item.sell_in -= 1
       end
+      # reduce_days #
       if item.sell_in < 0
         if item.name != CONST_BRIE
           if item.name != CONST_TICKETS
