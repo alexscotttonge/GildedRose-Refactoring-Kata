@@ -9,6 +9,12 @@ describe GildedRose do
       expect(items[0].name).to eq "foo"
     end
 
+    it 'decreases in quality each day' do
+      items = [Item.new("foo", 1, 1)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 0
+    end
+
     it 'increases the quality of brie by one each day' do
       items = [Item.new("Aged Brie", 1, 1)]
       GildedRose.new(items).update_quality()
@@ -28,7 +34,6 @@ describe GildedRose do
         GildedRose.new(items).update_quality()
         expect(items[0].quality).to eq 50
     end
-
   end
 
 end
