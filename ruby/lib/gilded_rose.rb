@@ -1,5 +1,10 @@
 class GildedRose
 
+  # think about separating out by thinking like a till e.g.
+  # def aged_brie?
+      # some code
+  # end
+
   #Special items
   CONST_BRIE = "Aged Brie"
   CONST_TICKETS = "Backstage passes to a TAFKAL80ETC concert"
