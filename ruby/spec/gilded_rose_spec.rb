@@ -27,6 +27,13 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
 
+    it 'quality of an item is never negative' do
+      items = [Item.new("foo", 0, 2)]
+      GildedRose.new(items).update_quality()
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 0
+    end
+
     it 'increases the quality of brie by one each day' do
       items = [Item.new("Aged Brie", 1, 1)]
       GildedRose.new(items).update_quality()
