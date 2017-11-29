@@ -18,7 +18,7 @@ class GildedRose
   def update_quality()
     @items.each do |item|
     # reduce quality by one if not brie or passes, more than zero quality and not sulfuras
-      if item.name != CONST_BRIE and item.name != CONST_TICKETS
+      if item.name != CONST_TICKETS
         if item.quality > 0
           if item.name != CONST_SULF
             item.quality -= 1
@@ -51,23 +51,16 @@ class GildedRose
 
       # reduce quality by 1 if not brie, passes, quality is over 1 and not sulfuras
       if item.sell_in < 0
-        if item.name != CONST_BRIE
           if item.name != CONST_TICKETS
             if item.quality > 0
               if item.name != CONST_SULF
                 item.quality -= 1
       # reduce quality by 1 if not brie, passes, quality is over 1 and not sulfuras
-
               end
             end
           else
             item.quality = item.quality - item.quality
           end
-        else
-          if item.quality < 50
-            item.quality += 1
-          end
-        end
       end
 
     end

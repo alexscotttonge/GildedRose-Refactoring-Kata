@@ -36,25 +36,25 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
 
-    it 'Aged Brie quality goes up by one before sell by date' do
-      items = [Item.new("Aged Brie", 5, 4)]
-      GildedRose.new(items).update_quality()
-      expect(items[0].quality).to eq 5
-    end
+    # it 'Aged Brie quality goes up by one before sell by date' do
+    #   items = [Item.new("Aged Brie", 5, 4)]
+    #   GildedRose.new(items).update_quality()
+    #   expect(items[0].quality).to eq 5
+    # end
 
-    it 'increases quality of Aged Brie twice as fast after sell by date' do
-      items = [Item.new("Aged Brie", 0, 1)]
-      GildedRose.new(items).update_quality()
-      GildedRose.new(items).update_quality()
-      expect(items[0].quality).to eq 5
-    end
+    # it 'increases quality of Aged Brie twice as fast after sell by date' do
+    #   items = [Item.new("Aged Brie", 0, 1)]
+    #   GildedRose.new(items).update_quality()
+    #   GildedRose.new(items).update_quality()
+    #   expect(items[0].quality).to eq 5
+    # end
 
-    it 'Aged Bried quality can never be more than 50' do
-      items = [Item.new("Aged Brie", 2, 49)]
-      GildedRose.new(items).update_quality()
-      GildedRose.new(items).update_quality()
-      expect(items[0].quality).to eq 50
-    end
+    # it 'Aged Bried quality can never be more than 50' do
+    #   items = [Item.new("Aged Brie", 2, 49)]
+    #   GildedRose.new(items).update_quality()
+    #   GildedRose.new(items).update_quality()
+    #   expect(items[0].quality).to eq 50
+    # end
 
     it 'increases quality of BSP 2x with less than 10 days' do
       items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 10)]
