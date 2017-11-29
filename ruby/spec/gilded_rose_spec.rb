@@ -36,6 +36,12 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
 
+    it 'Aged Brie quality goes up by one before sell by date' do
+      items = [Item.new("Aged Brie", 5, 4)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 5
+    end
+
     it 'increases quality of Aged Brie twice as fast after sell by date' do
       items = [Item.new("Aged Brie", 0, 1)]
       GildedRose.new(items).update_quality()
@@ -77,6 +83,12 @@ describe GildedRose do
       items = [Item.new("foo", 1, 1)]
       GildedRose.new(items).reduce_days
       expect(items[0].sell_in).to eq 0
+    end
+  end
+
+  describe '#is_brie?' do
+    it 'increases the quality 1x before sell by date' do
+      items = [Item.new("Aged Brie", 2, 2)]
     end
   end
 
