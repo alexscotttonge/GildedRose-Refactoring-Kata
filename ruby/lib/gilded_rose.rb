@@ -83,10 +83,9 @@ class GildedRose
 
   def is_brie?
     @items.each do |item|
-      if item.name == CONST_BRIE
-        item.quality += 1
-      end
-        item.sell_in -= 1
+      item.sell_in -= 1
+      item.quality += 1 if item.sell_in > 0
+      item.quality += 2 if item.sell_in < 0
     end
   end
 
