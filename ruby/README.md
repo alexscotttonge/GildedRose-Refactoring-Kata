@@ -5,6 +5,9 @@ Gilded Rose Kata in Ruby
 - Start with minor refactoring for the main lib file
 - Start extracting methods based on smaller if conditionals
 - Minor refactoring on lib file
+- Extracted methods for:
+  - reducing sell_in days for every item apart from 'Sulfuras'
+  - updating properties for 'Aged Brie' 
 
 ##To look at
 - Refactor methods according to what type of item it is

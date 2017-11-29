@@ -81,6 +81,13 @@ class GildedRose
     end
   end
 
+  def is_brie?
+    @items.each do |item|
+      if item.name == CONST_BRIE
+        item.quality += 1
+      end
+    end
+  end
 
 end
 

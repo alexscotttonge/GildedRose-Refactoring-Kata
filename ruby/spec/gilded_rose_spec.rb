@@ -89,6 +89,8 @@ describe GildedRose do
   describe '#is_brie?' do
     it 'increases the quality 1x before sell by date' do
       items = [Item.new("Aged Brie", 2, 2)]
+      GildedRose.new(items).is_brie?
+      expect(items[0].quality).to eq 3
     end
   end
 
