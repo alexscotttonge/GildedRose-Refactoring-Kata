@@ -86,7 +86,9 @@ class GildedRose
       item.sell_in -= 1
       item.quality += 1 if item.sell_in > 0
       item.quality += 2 if item.sell_in < 0
+      raise "quality can't be more than 50" if item.quality > 50
     end
+
   end
 
 end

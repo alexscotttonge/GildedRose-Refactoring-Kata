@@ -107,6 +107,12 @@ describe GildedRose do
       expect(items[0].quality).to eq 9
     end
 
+    it 'quality cannot be more than 50' do
+      items = [Item.new("Aged Brie", 0, 48)]
+      GildedRose.new(items).is_brie?
+      expect { GildedRose.new(items).is_brie? }.to raise_error(RuntimeError)
+    end
+
   end
 
 end
