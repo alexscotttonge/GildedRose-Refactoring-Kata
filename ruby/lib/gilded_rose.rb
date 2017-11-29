@@ -86,6 +86,7 @@ class GildedRose
       if item.name == CONST_BRIE
         item.quality += 1
       end
+        item.sell_in -= 1
     end
   end
 
